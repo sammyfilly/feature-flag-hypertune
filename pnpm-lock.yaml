@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@vercel/edge-config':
-    specifier: ^0.2.1
-    version: 0.2.1
+    specifier: ^1.0.0
+    version: 1.0.0(@opentelemetry/api@1.7.0)(typescript@5.1.6)
   '@vercel/examples-ui':
     specifier: ^2.0.3
     version: 2.0.3(next@13.4.20-canary.13)(react-dom@18.2.0)(react@18.2.0)
@@ -22,7 +22,7 @@ dependencies:
     version: 1.6.5(encoding@0.1.13)
   next:
     specifier: canary
-    version: 13.4.20-canary.13(react-dom@18.2.0)(react@18.2.0)
+    version: 13.4.20-canary.13(@opentelemetry/api@1.7.0)(react-dom@18.2.0)(react@18.2.0)
   react:
     specifier: latest
     version: 18.2.0
@@ -274,6 +274,11 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
 
+  /@opentelemetry/api@1.7.0:
+    resolution: {integrity: sha512-AdY5wvN0P2vXBi3b29hxZgSFvdhdxPB9+f0B6s//P9Q8nibRWeA3cHm8UmLpio9ABigkVHJ5NMPk+Mz8VCCyrw==}
+    engines: {node: '>=8.0.0'}
+    dev: false
+
   /@pkgr/utils@2.4.2:
     resolution: {integrity: sha512-POgTXhjrTfbTV63DiFXav4lBHiICLKKwDeaKn9Nphwj7WH6m0hMMCaJkMyRWjgtPFyRKRVoMXXjczsTQRDEhYw==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
@@ -390,11 +395,17 @@ packages:
     resolution: {integrity: sha512-NRIBwfcS0bUoUbRWlNGetqjvLSwgYH/BqKqDN7vK1g32p7dN96k0712COgaz6VFizAm9b0g6IG6hR6+hc0KCPg==}
     dev: false
 
-  /@vercel/edge-config@0.2.1:
-    resolution: {integrity: sha512-847kYqJEbga4PGgNrctQ9XsD+2Kw/S+UjzZnIFpebQ9VbdtB0MX4anq33WetcYZYPfhZd2L0uXVnY/BcjI5dOw==}
+  /@vercel/edge-config@1.0.0(@opentelemetry/api@1.7.0)(typescript@5.1.6):
+    resolution: {integrity: sha512-b0hgH543DvGdzcuYZZ2Kl6qFjkp1PQF5NwX3AFtdti3oDZNZuz9ZgT/wXq5Ly7zEBTB5PN7gDwmfkMsqzS1QMQ==}
     engines: {node: '>=14.6'}
+    peerDependencies:
+      '@opentelemetry/api': ^1.7.0
     dependencies:
+      '@opentelemetry/api': 1.7.0
       '@vercel/edge-config-fs': 0.1.0
+      ts-essentials: 9.4.1(typescript@5.1.6)
+    transitivePeerDependencies:
+      - typescript
     dev: false
 
   /@vercel/examples-ui@2.0.3(next@13.4.20-canary.13)(react-dom@18.2.0)(react@18.2.0):
@@ -406,7 +417,7 @@ packages:
     dependencies:
       '@swc/helpers': 0.5.1
       clsx: 1.2.1
-      next: 13.4.20-canary.13(react-dom@18.2.0)(react@18.2.0)
+      next: 13.4.20-canary.13(@opentelemetry/api@1.7.0)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
@@ -2048,7 +2059,7 @@ packages:
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
-  /next@13.4.20-canary.13(react-dom@18.2.0)(react@18.2.0):
+  /next@13.4.20-canary.13(@opentelemetry/api@1.7.0)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-o25BQSItqFlks8Fzvi4FHUXUhnArIgMB6/gfAR3RgqIRBzl7oJrZqBs45W8MHWgK188ndrlzMSCeOMn0TJPF/w==}
     engines: {node: '>=16.14.0'}
     hasBin: true
@@ -2064,6 +2075,7 @@ packages:
         optional: true
     dependencies:
       '@next/env': 13.4.20-canary.13
+      '@opentelemetry/api': 1.7.0
       '@swc/helpers': 0.5.1
       busboy: 1.6.0
       caniuse-lite: 1.0.30001521
@@ -2785,6 +2797,17 @@ packages:
 
   /tr46@0.0.3:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
+    dev: false
+
+  /ts-essentials@9.4.1(typescript@5.1.6):
+    resolution: {integrity: sha512-oke0rI2EN9pzHsesdmrOrnqv1eQODmJpd/noJjwj2ZPC3Z4N2wbjrOEqnsEgmvlO2+4fBb0a794DCna2elEVIQ==}
+    peerDependencies:
+      typescript: '>=4.1.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      typescript: 5.1.6
     dev: false
 
   /ts-interface-checker@0.1.13:
